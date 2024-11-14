@@ -4,6 +4,7 @@ export class Product_Page {
     readonly page: Page;
     readonly filterSelector: Locator;
     readonly inventoryItemName: Locator;
+    readonly productDescriptionBody: Locator;
     readonly addToCartButton: Locator;
 
     constructor(page: Page) {
@@ -13,6 +14,9 @@ export class Product_Page {
 
         //Headers
         this.inventoryItemName =  page.locator('[data-test="inventory-item-name"]');
+
+        //Text
+        this.productDescriptionBody = page.locator('[data-test="inventory-item-desc"]')
 
         //Button
         this.addToCartButton = page.locator('button').filter({hasText:'Add to Cart'})

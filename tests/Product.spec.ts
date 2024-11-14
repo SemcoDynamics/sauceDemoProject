@@ -2,7 +2,6 @@ import { test, expect } from '@playwright/test';
 import { Login_Page } from '../POM/Login_Page';
 import data from '../HelperFiles/data.json';
 import { Product_Page } from '../POM/Product_Page';
-import { randomInt } from 'crypto';
 
 test.describe('Filter selection', () => {
     test('Verify filter order (A to Z)', async ({ page }) => {
@@ -89,7 +88,12 @@ test.describe('Filter selection', () => {
 })
 test.describe('View product description', () => {
   test('Select product description', async ({ page }) => {
-    
+    const loginPage = new Login_Page(page);
+    const productPage = new Product_Page(page);
+    await loginPage.LoginForm(data.env.bURL, data.users.standard, data.password);
+    await productPage.inventoryItemName.filter({hasText: data.itemDescriptionName.SauceLabsBikeLight}).click()
+    await expect(productPage.inventoryItemName).toHaveText(data.itemDescriptionName.SauceLabsBikeLight)
+    await expect(productPage.productDescriptionBody).toHaveText(data.productDescriptionBodyText.BikeLight)
   })
   
   
