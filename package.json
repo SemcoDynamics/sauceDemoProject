@@ -1,0 +1,33 @@
+{
+  "name": "saucedemoproject",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "codegen": "npx playwright codegen",
+    "ui": "npx playwright test --ui",
+    "tests": "npx playwright test"
+  },
+  "keywords": [
+    "playwright",
+    "testing",
+    "automation"
+  ],
+  "author": "Brandon Olckers",
+  "license": "ISC",
+  "description": "- Runs the end-to-end tests.",
+  "devDependencies": {
+    "@faker-js/faker": "^9.2.0",
+    "@playwright/test": "^1.48.2",
+    "@types/node": "^22.9.0",
+    "randomjs": "1.0.1"
+  },
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "playwright": "^1.48.2",
+    "playwright-core": "^1.48.2",
+    "random-js": "^2.1.0",
+    "undici-types": "^6.19.8"
+  }
+}

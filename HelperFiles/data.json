@@ -1,0 +1,29 @@
+{
+    "env": {
+        "bURL": "/"
+    },
+    "users": {
+        "standard": "standard_user",
+        "locked": "locked_out_user",
+        "problem": "problem_user",
+        "performanceGlitch": "performance_glitch_user",
+        "error": "error_user",
+        "visual": "visual_user"
+    },
+    "password": "secret_sauce",
+    "productFilters": {
+        "NameAtoZ": "az",
+        "NameZtoA": "za",
+        "PriceLowToHigh": "lohi",
+        "PriceHighToLow": "hilo"
+    },
+    "itemDescriptionName": {
+        "SauceLabsBackpack": "Sauce Labs Backpack",
+        "SauceLabsBikeLight": "Sauce Labs Bike Light",
+        "SauceLabsBoltTShirt": "Sauce Labs Bolt T-Shirt",
+        "SauceLabsFleeceJacket": "Sauce Labs Fleece Jacket",
+        "SauceLabsOnesie": "Sauce Labs Onesie",
+        "TestAllTheThings": "Test.allTheThings() T-Shirt (Red)"
+    }
+    
+}
