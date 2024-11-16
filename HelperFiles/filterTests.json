@@ -1,0 +1,50 @@
+[
+  {
+    "filter": "az",
+    "expectedOrder": [
+      "Sauce Labs Backpack",
+      "Sauce Labs Bike Light",
+      "Sauce Labs Bolt T-Shirt",
+      "Sauce Labs Fleece Jacket",
+      "Sauce Labs Onesie",
+      "Test.allTheThings() T-Shirt (Red)"
+    ],
+    "screenshotName": "filter_A_to_Z.png"
+  },
+  {
+    "filter": "za",
+    "expectedOrder": [
+      "Test.allTheThings() T-Shirt (Red)",
+      "Sauce Labs Onesie",
+      "Sauce Labs Fleece Jacket",
+      "Sauce Labs Bolt T-Shirt",
+      "Sauce Labs Bike Light",
+      "Sauce Labs Backpack"
+    ],
+    "screenshotName": "filter_Z_to_A.png"
+  },
+  {
+    "filter": "lohi",
+    "expectedOrder": [
+      "Sauce Labs Onesie",
+      "Sauce Labs Bike Light",
+      "Sauce Labs Bolt T-Shirt",
+      "Test.allTheThings() T-Shirt (Red)",
+      "Sauce Labs Backpack",
+      "Sauce Labs Fleece Jacket"
+    ],
+    "screenshotName": "filter_low_to_high.png"
+  },
+  {
+    "filter": "hilo",
+    "expectedOrder": [
+      "Sauce Labs Fleece Jacket",
+      "Sauce Labs Backpack",
+      "Sauce Labs Bolt T-Shirt",
+      "Test.allTheThings() T-Shirt (Red)",
+      "Sauce Labs Bike Light",
+      "Sauce Labs Onesie"
+    ],
+    "screenshotName": "filter_high_to_low.png"
+  }
+]

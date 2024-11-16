@@ -9,7 +9,6 @@ test.describe('Login with different accounts', async () => {
 for (let i = 0; i < usernames.length; i++) {
   test(`Login to Sauce Demo as a ${usernames[i]}`,{tag:"@fast"}, async ({ page }) => {
     const loginPage = new Login_Page(page)
-    const helpers = new Helper(page);
 
     await page.goto("/")
     await loginPage.LoginForm("/", `${usernames[i]}`, data.password)
