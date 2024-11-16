@@ -116,6 +116,18 @@ test.describe('View product description', () => {
     await expect(productPage.productDescriptionBody).toHaveText(data.productDescriptionBodyText.BikeLight)
     await helpers.screenShotPage("Correct body.png", 0.02)
   })
-  
+  test.describe('Verify social links', async () => {
+    const socialLinks = ['[data-test="social-twitter"]', '[data-test="social-facebook"]', '[data-test="social-linkedin"]']
+    
+    for(let i = 0; i < socialLinks.length; i++){
+      test(`Verify social link ${socialLinks[i]} resolve correctly`, async ({ page }) => {
+        const loginPage = new Login_Page(page);
+        await loginPage.LoginForm("/", data.users.standard, data.password);
+        await page.locator(socialLinks[i]).click()
+      })
+    }
+    
+    
+  })
   
 })

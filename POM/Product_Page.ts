@@ -20,6 +20,8 @@ export class Product_Page {
 
         //Button
         this.addToCartButton = page.locator('button').filter({hasText:'Add to Cart'})
+
+        //social
     }
     async selectFilter(filterName: string) {
         await this.filterSelector.click();
