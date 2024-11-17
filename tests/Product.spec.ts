@@ -101,5 +101,17 @@ test.describe('View product description', () => {
     await productPage.addToCartButton.click()
     await expect(productPage.cardBadge).toHaveText('1')
   });
+  test.describe('Verify social links', async () => {
+    const socialLinks = ['[data-test="social-twitter"]', '[data-test="social-facebook"]', '[data-test="social-linkedin"]']
+    
+    for(let i = 0; i < socialLinks.length; i++){
+      test(`Verify social link ${socialLinks[i]} resolve correctly`, async ({ page }) => {
+        const loginPage = new Login_Page(page);
+        await loginPage.LoginForm("/", data.users.standard, data.password);
+        await page.locator(socialLinks[i]).click()
+      })
+    }
+    
+  })
   
 })

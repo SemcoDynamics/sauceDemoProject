@@ -25,6 +25,7 @@ export class Product_Page {
 
         //Labels
         this.cardBadge = page.locator('[data-test="shopping-cart-badge"]');
+        
     }
     async selectFilter(filterName: string) {
         await this.filterSelector.click();
