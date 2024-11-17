@@ -11,6 +11,7 @@
         "visual": "visual_user"
     },
     "password": "secret_sauce",
+    
     "productFilters": {
         "NameAtoZ": "az",
         "NameZtoA": "za",

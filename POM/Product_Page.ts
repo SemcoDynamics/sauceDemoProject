@@ -6,6 +6,8 @@ export class Product_Page {
     readonly inventoryItemName: Locator;
     readonly productDescriptionBody: Locator;
     readonly addToCartButton: Locator;
+    readonly cardBadge: Locator;
+
 
     constructor(page: Page) {
         this.page = page;
@@ -16,12 +18,14 @@ export class Product_Page {
         this.inventoryItemName =  page.locator('[data-test="inventory-item-name"]');
 
         //Text
-        this.productDescriptionBody = page.locator('[data-test="inventory-item-desc"]')
+        this.productDescriptionBody = page.locator('[data-test="inventory-item-desc"]');
 
         //Button
-        this.addToCartButton = page.locator('button').filter({hasText:'Add to Cart'})
+        this.addToCartButton = page.locator('button').filter({hasText:'Add to Cart'});
 
-        //social
+        //Labels
+        this.cardBadge = page.locator('[data-test="shopping-cart-badge"]');
+        
     }
     async selectFilter(filterName: string) {
         await this.filterSelector.click();
