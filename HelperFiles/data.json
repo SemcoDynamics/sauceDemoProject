@@ -13,10 +13,50 @@
     "password": "secret_sauce",
     
     "productFilters": {
-        "NameAtoZ": "az",
-        "NameZtoA": "za",
-        "PriceLowToHigh": "lohi",
-        "PriceHighToLow": "hilo"
+        "NameAtoZ": {
+          "filterValue": "az", 
+          "filterArray": [
+            "Sauce Labs Backpack",
+            "Sauce Labs Bike Light",
+            "Sauce Labs Bolt T-Shirt",
+            "Sauce Labs Fleece Jacket",
+            "Sauce Labs Onesie",
+            "Test.allTheThings() T-Shirt (Red)"
+           ]
+        },
+        "NameZtoA": {
+            "filterValue": "za",
+            "filterArray": [
+                "Test.allTheThings() T-Shirt (Red)",
+                "Sauce Labs Onesie",
+                "Sauce Labs Fleece Jacket",
+                "Sauce Labs Bolt T-Shirt",
+                "Sauce Labs Bike Light",
+                "Sauce Labs Backpack"
+               ]
+        },
+        "PriceLowToHigh": {
+            "filterValue": "lohi",
+            "filterArray": [
+                "Sauce Labs Onesie",
+                "Sauce Labs Bike Light",
+                "Sauce Labs Bolt T-Shirt",
+                "Test.allTheThings() T-Shirt (Red)",
+                "Sauce Labs Backpack",
+                "Sauce Labs Fleece Jacket"
+               ]
+        },
+        "PriceHighToLow": {
+            "filterValue": "hilo",
+            "filterArray": [
+                "Sauce Labs Fleece Jacket",
+                "Sauce Labs Backpack",
+                "Sauce Labs Bolt T-Shirt",
+                "Test.allTheThings() T-Shirt (Red)",
+                "Sauce Labs Bike Light",
+                "Sauce Labs Onesie"
+               ]
+        }
     },
     "itemDescriptionName": {
         "SauceLabsBackpack": "Sauce Labs Backpack",

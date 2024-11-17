@@ -12,17 +12,10 @@ test.describe('Filter selection', () => {
       const helpers = new Helper(page);
 
       await loginPage.LoginForm(data.env.bURL, data.users.standard, data.password)
-      await productPage.selectFilter(data.productFilters.NameAtoZ)
+      await productPage.selectFilter(data.productFilters.NameAtoZ.filterValue)
       const inventoryItemArray = await productPage.inventoryItemName.allTextContents()
-      const filterContent = [
-        "Sauce Labs Backpack",
-        "Sauce Labs Bike Light",
-        "Sauce Labs Bolt T-Shirt",
-        "Sauce Labs Fleece Jacket",
-        "Sauce Labs Onesie",
-        "Test.allTheThings() T-Shirt (Red)"
-       ]
-       expect(filterContent).toEqual(inventoryItemArray)
+
+       expect(inventoryItemArray).toEqual(data.productFilters.NameAtoZ.filterArray)
        await helpers.screenShotPage("filter Z to A.png", 0.12)
     })
     test('Verify filter order Name (Z to A)', async ({ page }) => {
@@ -31,17 +24,10 @@ test.describe('Filter selection', () => {
       const helpers = new Helper(page);
 
       await loginPage.LoginForm(data.env.bURL, data.users.standard, data.password)
-      await productPage.selectFilter(data.productFilters.NameZtoA)
+      await productPage.selectFilter(data.productFilters.NameZtoA.filterValue)
       const inventoryItemArray = await productPage.inventoryItemName.allTextContents()
-      const filterContent = [
-        "Test.allTheThings() T-Shirt (Red)",
-        "Sauce Labs Onesie",
-        "Sauce Labs Fleece Jacket",
-        "Sauce Labs Bolt T-Shirt",
-        "Sauce Labs Bike Light",
-        "Sauce Labs Backpack"
-       ]
-       expect(filterContent).toEqual(inventoryItemArray)
+
+       expect(inventoryItemArray).toEqual(data.productFilters.NameZtoA.filterArray)
        await helpers.screenShotPage("filter Z to A.png", 0.02)
     })
     test('Verify filter order Price (low to high)', async ({ page }) => {
@@ -50,17 +36,11 @@ test.describe('Filter selection', () => {
       const helpers = new Helper(page);
 
       await loginPage.LoginForm(data.env.bURL, data.users.standard, data.password)
-      await productPage.selectFilter(data.productFilters.PriceLowToHigh)
+      await productPage.selectFilter(data.productFilters.PriceLowToHigh.filterValue)
       const inventoryItemArray = await productPage.inventoryItemName.allTextContents()
-      const filterContent = [
-        "Sauce Labs Onesie",
-        "Sauce Labs Bike Light",
-        "Sauce Labs Bolt T-Shirt",
-        "Test.allTheThings() T-Shirt (Red)",
-        "Sauce Labs Backpack",
-        "Sauce Labs Fleece Jacket"
-       ]
-       expect(filterContent).toEqual(inventoryItemArray)
+      console.log(inventoryItemArray)
+
+       expect(inventoryItemArray).toEqual(data.productFilters.PriceLowToHigh.filterArray)
        await helpers.screenShotPage("filter low to high.png", 0.02)
 
     })
@@ -70,17 +50,11 @@ test.describe('Filter selection', () => {
       const helpers = new Helper(page);
 
       await loginPage.LoginForm(data.env.bURL, data.users.standard, data.password)
-      await productPage.selectFilter(data.productFilters.PriceHighToLow)
+      await productPage.selectFilter(data.productFilters.PriceHighToLow.filterValue)
       const inventoryItemArray = await productPage.inventoryItemName.allTextContents()
-      const filterContent = [
-        "Sauce Labs Fleece Jacket",
-        "Sauce Labs Backpack",
-        "Sauce Labs Bolt T-Shirt",
-        "Test.allTheThings() T-Shirt (Red)",
-        "Sauce Labs Bike Light",
-        "Sauce Labs Onesie"
-       ]
-       expect(filterContent).toEqual(inventoryItemArray)
+      console.log(inventoryItemArray)
+
+       expect(inventoryItemArray).toEqual(data.productFilters.PriceHighToLow.filterArray)
        await helpers.screenShotPage("filter high to low.png", 0.02)
 
     })
