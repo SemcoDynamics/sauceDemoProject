@@ -6,12 +6,16 @@ import { Helper } from '../HelperFiles/Helper';
 import { expect } from 'playwright/test';
 
 test.describe('Filter selection', () => {
+  test.beforeEach(async ({ page }) => {
+    const loginPage = new Login_Page(page)
+    await loginPage.LoginForm(data.env.bURL, data.users.standard, data.password)
+
+  });
+  
     test('Verify filter order (A to Z)', async ({ page }) => {
-      const loginPage = new Login_Page(page)
       const productPage = new Product_Page(page)
       const helpers = new Helper(page);
 
-      await loginPage.LoginForm(data.env.bURL, data.users.standard, data.password)
       await productPage.selectFilter(data.productFilters.NameAtoZ.filterValue)
       const inventoryItemArray = await productPage.inventoryItemName.allTextContents()
 
@@ -19,11 +23,9 @@ test.describe('Filter selection', () => {
        await helpers.screenShotPage("filter Z to A.png", 0.12)
     })
     test('Verify filter order Name (Z to A)', async ({ page }) => {
-      const loginPage = new Login_Page(page)
       const productPage = new Product_Page(page)
       const helpers = new Helper(page);
 
-      await loginPage.LoginForm(data.env.bURL, data.users.standard, data.password)
       await productPage.selectFilter(data.productFilters.NameZtoA.filterValue)
       const inventoryItemArray = await productPage.inventoryItemName.allTextContents()
 
@@ -31,11 +33,9 @@ test.describe('Filter selection', () => {
        await helpers.screenShotPage("filter Z to A.png", 0.02)
     })
     test('Verify filter order Price (low to high)', async ({ page }) => {
-      const loginPage = new Login_Page(page)
       const productPage = new Product_Page(page)
       const helpers = new Helper(page);
 
-      await loginPage.LoginForm(data.env.bURL, data.users.standard, data.password)
       await productPage.selectFilter(data.productFilters.PriceLowToHigh.filterValue)
       const inventoryItemArray = await productPage.inventoryItemName.allTextContents()
       console.log(inventoryItemArray)
@@ -45,11 +45,9 @@ test.describe('Filter selection', () => {
 
     })
     test('Verify filter order Price (high to low)', async ({ page }) => {
-      const loginPage = new Login_Page(page)
       const productPage = new Product_Page(page)
       const helpers = new Helper(page);
 
-      await loginPage.LoginForm(data.env.bURL, data.users.standard, data.password)
       await productPage.selectFilter(data.productFilters.PriceHighToLow.filterValue)
       const inventoryItemArray = await productPage.inventoryItemName.allTextContents()
       console.log(inventoryItemArray)
