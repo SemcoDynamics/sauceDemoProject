@@ -91,10 +91,8 @@ test.describe('View product description', () => {
     await helpers.screenShotPage("Correct body.png", 0.02)
   });
   test('Add to cart from product description page', async ({loginAndNavigate}) => {
-    //const loginPage = new Login_Page(page);
     const productPage = new Product_Page(loginAndNavigate);
 
-    //await loginPage.LoginForm(data.env.bURL, data.users.standard, data.password);
     await productPage.inventoryItemName.filter({hasText: data.itemDescriptionName.SauceLabsBikeLight}).click()
     await productPage.addToCartButton.click()
     await expect(productPage.cardBadge).toHaveText('1')
