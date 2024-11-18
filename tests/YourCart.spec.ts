@@ -6,6 +6,7 @@ test.describe('Cart', () => {
     test('View your cart', async ({addToCartNavigate, page}) => {
         const cartPage = new YourCart_Page(addToCartNavigate);
         await expect(cartPage.inventoryItem).toContainText('Sauce Labs Bolt T-Shirt');
+        await expect(cartPage.inventoryItem).toContainText('$15.99')
         await cartPage.checkoutButton.click()
     });  
     test('Remove product from cart page', async ({ addToCartNavigate ,page }) => {
