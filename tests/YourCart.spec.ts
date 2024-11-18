@@ -1,6 +1,5 @@
 import {test} from '../Fixtures/LoginAndNavigate';
 import { expect } from 'playwright/test';
-import { Product_Page } from '../POM/Product_Page';
 import { YourCart_Page } from '../POM/YourCart_Page';
 
 test.describe('Cart', () => {
@@ -19,6 +18,7 @@ test.describe('Cart', () => {
         const cartPage = new YourCart_Page(addToCartNavigate);
         await expect(cartPage.inventoryItem).toContainText('Sauce Labs Bolt T-Shirt');
         await cartPage.continueShoppingButton.click()
+        await expect(page).toHaveURL('https://www.saucedemo.com/inventory.html')
     });
     
 
