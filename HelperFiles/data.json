@@ -68,6 +68,33 @@
     },
     "productDescriptionBodyText":{
         "BikeLight": "A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included."
+    },
+    "formDetails": {
+        "firstnames": [
+            "Jack",
+            "Jones",
+            "Jake",
+            "Johnson",
+            "jeff",
+            "James"
+        ],
+        "lastnames": [
+            "Pedro",
+            "Padre",
+            "Penny",
+            "Poco",
+            "Pew Pew",
+            "Peterson"
+        ],
+        "postalCode": [
+            "8000",
+            "8001",
+            "8002",
+            "8003",
+            "8004",
+            "8005"
+        ]
+    
     }
     
 }

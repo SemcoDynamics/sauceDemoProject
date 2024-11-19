@@ -16,4 +16,11 @@ export class Checkout_Page {
         this.continueButton = page.getByRole('button', {name:"Continue"});
         this.cancelButton = page.getByRole('button', {name:"Cancel"});
     }
+    async checkoutForm(firstName: string, lastName: string, postalCode: string) {
+        const checkoutPage = new Checkout_Page(this.page)
+        await checkoutPage.formFirstName.fill(firstName);
+        await checkoutPage.formLastName.fill(lastName);
+        await checkoutPage.formpostalCode.fill(postalCode)
+        
+    }
 }
