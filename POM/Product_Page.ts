@@ -6,6 +6,7 @@ export class Product_Page {
     readonly inventoryItemName: Locator;
     readonly productDescriptionBody: Locator;
     readonly addToCartButton: Locator;
+    readonly removeButton: Locator;
     readonly cardBadge: Locator;
 
 
@@ -22,6 +23,7 @@ export class Product_Page {
 
         //Button
         this.addToCartButton = page.locator('button').filter({hasText:'Add to Cart'});
+        this.removeButton = page.locator('button').filter({hasText:'Remove'});
 
         //Labels
         this.cardBadge = page.locator('[data-test="shopping-cart-badge"]');
