@@ -22,7 +22,6 @@ test.describe('Cart', () => {
         await expect(page).toHaveURL('https://www.saucedemo.com/inventory.html')
     });
     
-
 });
 
 
