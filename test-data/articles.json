@@ -1,0 +1,26 @@
+{
+    "articles": [
+        {
+            "slug": "This is something new I learnt",
+            "title": "Mocking API's are fun",
+            "description": "Join me in mocking everyone",
+            "body": "A whole new world",
+            "tagList": [
+                "Test mocking",
+                "Brandon Academy",
+                "QA Talent",
+                "Career-Focused"
+            ],
+            "createdAt": "2024-01-27T21:52:32.682Z",
+            "updatedAt": "2024-01-27T21:52:32.682Z",
+            "favorited": false,
+            "favoritesCount": 0,
+            "author": {
+                "username": "Brandon O",
+                "bio": null,
+                "image": "https://storage.googleapis.com/bondar-academy-visuals/Android.png",
+                "following": false
+            }
+        }
+    ]
+}
