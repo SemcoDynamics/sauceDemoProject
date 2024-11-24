@@ -64,7 +64,9 @@ test.describe('Mock API without a Json', () => {
         await page.route('https://conduit-api.bondaracademy.com/api/articles?limit=10&offset=0', async route => {
             const response = await route.fetch();
             const responseBody = await response.json();
-            responseBody.article[0].favoritesCount = 0
+            //Mocking the response
+            responseBody.articles[0].favoritesCount = 100
+            responseBody.articles[0].title = 'The title of a job Well done!'
             await route.fulfill({
                 response,
                 //Parses test data json
@@ -72,7 +74,9 @@ test.describe('Mock API without a Json', () => {
             })
         })
         await page.goto('https://conduit.bondaracademy.com/')
-        await page.locator('.tag-list').click()
+        const tagCard = 'app-article-preview'
+        await page.waitForSelector(tagCard)
+
     });
 
 });
