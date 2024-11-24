@@ -1,5 +1,5 @@
 # Project Name
-![Image Description](../../Documents/plawright.png)
+![Image Description](./e2e//plawright.png)
 
 
 ## Description
