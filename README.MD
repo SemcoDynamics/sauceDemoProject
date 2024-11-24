@@ -38,16 +38,16 @@ To get started:
 
 # Project Structure
 SauceDemoProject/
-  ├──Fixtures
-    ├── LoginAndNavigate.ts
-  ├── HelperFiles
-    ├── data.json
-  ├── tests/                   # Test files
-    ├── API
-      ├── ApiMocking.spec.ts
-  ├── playwright.config.ts     # Playwright configuration
-  ├── package.json             # Project metadata and scripts
-  └── README.md                # Project documentation
+  # ├──Fixtures
+  #   ├── LoginAndNavigate.ts
+  # ├── HelperFiles
+  #   ├── data.json
+  # ├── tests/                   # Test files
+  #   ├── API
+  #   ├── ApiMocking.spec.ts
+  # ├── playwright.config.ts     # Playwright configuration
+  # ├── package.json             # Project metadata and scripts
+  # └── README.md                # Project documentation
 
 # Contributing
   Guidelines for contributing to your project. Include information on how to report issues, submit pull requests, and any coding standards.
