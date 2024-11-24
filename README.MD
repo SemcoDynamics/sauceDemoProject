@@ -1,5 +1,5 @@
 # Project Name
-![Image Description](./home/semco/Documents/plawright.png)
+![Image Description](../../Documents/plawright.png)
 
 
 ## Description
