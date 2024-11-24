@@ -1,8 +1,8 @@
-import {test} from "../Fixtures/LoginAndNavigate";
+import {test} from "../../Fixtures/LoginAndNavigate";
 import { expect } from "playwright/test";
-import { Checkout_Page } from "../POM/Checkout_Page";
-import { YourCart_Page } from "../POM/YourCart_Page";
-import data from "../HelperFiles/data.json"
+import { Checkout_Page } from "../../POM/Checkout_Page";
+import { YourCart_Page } from "../../POM/YourCart_Page";
+import data from "../../HelperFiles/data.json"
 test.describe('Checkout tests', () => {
     test('Fill in form and checkout', async ({ loginAndNavigate, cartNavigate, page }) => {
         await loginAndNavigate;

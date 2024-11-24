@@ -1,6 +1,6 @@
-import {test} from '../Fixtures/LoginAndNavigate';
+import {test} from '../../Fixtures/LoginAndNavigate';
 import { expect } from 'playwright/test';
-import { YourCart_Page } from '../POM/YourCart_Page';
+import { YourCart_Page } from '../../POM/YourCart_Page';
 
 test.describe('Cart', () => {
     test('View your cart', async ({addToCartNavigate, page}) => {

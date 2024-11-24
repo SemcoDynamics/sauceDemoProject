@@ -1,6 +1,6 @@
 import {test, expect} from "playwright/test"
-import tags from '../test-data/tags.json'
-import articles from '../test-data/articles.json'
+import tags from '../../test-data/tags.json'
+import articles from '../../test-data/articles.json'
 
 test.describe('Mock test', () => {
     test.beforeEach(async ({ page }) => {

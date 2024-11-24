@@ -1,8 +1,8 @@
-import { test } from '../Fixtures/LoginAndNavigate';
-import { Login_Page } from '../POM/Login_Page';
-import data from '../HelperFiles/data.json';
-import { Product_Page } from '../POM/Product_Page';
-import { Helper } from '../HelperFiles/Helper';
+import { test } from '../../Fixtures/LoginAndNavigate';
+import { Login_Page } from '../../POM/Login_Page';
+import data from '../../HelperFiles/data.json';
+import { Product_Page } from '../../POM/Product_Page';
+import { Helper } from '../../HelperFiles/Helper';
 import { expect } from 'playwright/test';
 
 test.describe('Filter selection', () => {
