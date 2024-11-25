@@ -30,7 +30,7 @@ test.describe('Filter selection', () => {
       const inventoryItemArray = await productPage.inventoryItemName.allTextContents()
 
        expect(inventoryItemArray).toEqual(data.productFilters.NameZtoA.filterArray)
-       await helpers.screenShotPage("filter Z to A.png", 0.02)
+       await helpers.screenShotPage("filter Z to A.png", 0.12)
     })
     test('Verify filter order Price (low to high)', async ({ page }) => {
       const productPage = new Product_Page(page)
