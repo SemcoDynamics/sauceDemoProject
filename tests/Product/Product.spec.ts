@@ -1,8 +1,8 @@
-import { test } from '../Fixtures/LoginAndNavigate';
-import { Login_Page } from '../POM/Login_Page';
-import data from '../HelperFiles/data.json';
-import { Product_Page } from '../POM/Product_Page';
-import { Helper } from '../HelperFiles/Helper';
+import { test } from '../../Fixtures/LoginAndNavigate';
+import { Login_Page } from '../../POM/Login_Page';
+import data from '../../HelperFiles/data.json';
+import { Product_Page } from '../../POM/Product_Page';
+import { Helper } from '../../HelperFiles/Helper';
 import { expect } from 'playwright/test';
 
 test.describe('Filter selection', () => {
@@ -30,7 +30,7 @@ test.describe('Filter selection', () => {
       const inventoryItemArray = await productPage.inventoryItemName.allTextContents()
 
        expect(inventoryItemArray).toEqual(data.productFilters.NameZtoA.filterArray)
-       await helpers.screenShotPage("filter Z to A.png", 0.02)
+       await helpers.screenShotPage("filter Z to A.png", 0.12)
     })
     test('Verify filter order Price (low to high)', async ({ page }) => {
       const productPage = new Product_Page(page)

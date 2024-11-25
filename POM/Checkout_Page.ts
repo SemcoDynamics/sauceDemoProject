@@ -9,6 +9,8 @@ export class Checkout_Page {
     //Buttons
     readonly continueButton: Locator;
     readonly cancelButton: Locator;
+    readonly paymentInfo: Locator;
+    readonly paymentId: Locator;
     readonly finishButton: Locator;
     readonly backHomeButton: Locator;
     //Containers
@@ -16,13 +18,18 @@ export class Checkout_Page {
 
     constructor(page: Page){
         this.page = page;
-        //Textboxs
         this.formFirstName = page.getByPlaceholder('First Name');
         this.formLastName = page.getByPlaceholder('Last Name');
         this.formpostalCode = page.getByPlaceholder('Zip/Postal Code');
         //Buttons
         this.continueButton = page.getByRole('button', {name:"Continue"});
         this.cancelButton = page.getByRole('button', {name:"Cancel"});
+        //Checkout: Overview
+        this.paymentInfo = page.locator('[data-test="cart-list"]');
+        this.paymentId =  page.locator('[data-test="payment-info-value"]')
+        this.finishButton = page.getByRole('button', {name:'Finish'});
+
+
         this.finishButton = page.getByRole('button', {name: 'Finish'});
         this.backHomeButton = page.getByRole('button', {name:'Back Home'})
         //Containers
@@ -34,5 +41,11 @@ export class Checkout_Page {
         await checkoutPage.formLastName.fill(lastName);
         await checkoutPage.formpostalCode.fill(postalCode)
         
+    }
+    async paymentIdNumber(): Promise<string | null> {
+         return await this.paymentId.textContent(); 
+    }
+    async finishButtonClick(){
+        await this.finishButton.click();
     }
 }
