@@ -16,6 +16,7 @@
   "license": "ISC",
   "description": "- Runs the end-to-end tests.",
   "devDependencies": {
+    "@argos-ci/playwright": "^3.9.2",
     "@faker-js/faker": "^9.2.0",
     "@playwright/test": "^1.48.2",
     "@types/node": "^22.9.0",
@@ -26,6 +27,7 @@
     "test": "tests"
   },
   "dependencies": {
+    "dotenv": "^16.4.5",
     "playwright": "^1.48.2",
     "playwright-core": "^1.48.2",
     "random-js": "^2.1.0",

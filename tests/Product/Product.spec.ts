@@ -4,6 +4,7 @@ import data from '../../HelperFiles/data.json';
 import { Product_Page } from '../../POM/Product_Page';
 import { Helper } from '../../HelperFiles/Helper';
 import { expect } from 'playwright/test';
+import { argosScreenshot } from "@argos-ci/playwright";
 
 test.describe('Filter selection', () => {
   test.beforeEach(async ({ page }) => {
@@ -21,6 +22,7 @@ test.describe('Filter selection', () => {
 
        expect(inventoryItemArray).toEqual(data.productFilters.NameAtoZ.filterArray)
        await helpers.screenShotPage("filter Z to A.png", 0.12)
+       await argosScreenshot(page, "filter Z to A.png");
     })
     test('Verify filter order Name (Z to A)', async ({ page }) => {
       const productPage = new Product_Page(page)
@@ -31,6 +33,8 @@ test.describe('Filter selection', () => {
 
        expect(inventoryItemArray).toEqual(data.productFilters.NameZtoA.filterArray)
        await helpers.screenShotPage("filter Z to A.png", 0.12)
+       await argosScreenshot(page, "filter Z to A.png");
+
     })
     test('Verify filter order Price (low to high)', async ({ page }) => {
       const productPage = new Product_Page(page)
@@ -42,6 +46,8 @@ test.describe('Filter selection', () => {
 
        expect(inventoryItemArray).toEqual(data.productFilters.PriceLowToHigh.filterArray)
        await helpers.screenShotPage("filter low to high.png", 0.02)
+       await argosScreenshot(page, "filter low to high.png");
+
 
     })
     test('Verify filter order Price (high to low)', async ({ page }) => {
@@ -54,6 +60,8 @@ test.describe('Filter selection', () => {
 
        expect(inventoryItemArray).toEqual(data.productFilters.PriceHighToLow.filterArray)
        await helpers.screenShotPage("filter high to low.png", 0.02)
+       await argosScreenshot(page, "filter high to low.png");
+
 
     })
 
@@ -66,6 +74,8 @@ test.describe('Add Product to cart', () => {
 
       await productPage.selectProductHeaderAndAddToCart([data.itemDescriptionName.SauceLabsBoltTShirt]);
       await helpers.screenShotPage("Single products added to cart.png", 0.02)
+      await argosScreenshot(page, "Single products added to cart.png");
+
   });
   test('Add a muliple product to cart', async ({loginAndNavigate, page }) => {
       await loginAndNavigate;
@@ -74,6 +84,8 @@ test.describe('Add Product to cart', () => {
 
       await productPage.selectProductHeaderAndAddToCart([data.itemDescriptionName.SauceLabsBoltTShirt, data.itemDescriptionName.SauceLabsBikeLight])
       await helpers.screenShotPage("Multiple products added to cart.png", 0.02)
+      await argosScreenshot(page, "Multiple products added to cart.png");
+
     })
 })
 test.describe('View product description', () => {
@@ -86,6 +98,8 @@ test.describe('View product description', () => {
     await expect(productPage.inventoryItemName).toHaveText(data.itemDescriptionName.SauceLabsBikeLight)
     await expect(productPage.productDescriptionBody).toHaveText(data.productDescriptionBodyText.BikeLight)
     await helpers.screenShotPage("Correct body.png", 0.02)
+    await argosScreenshot(page, "Correct body.png");
+
   });
   test('Add to cart from product description page', async ({loginAndNavigate, page}) => {
     await loginAndNavigate;
