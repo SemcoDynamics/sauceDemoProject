@@ -4,4 +4,4 @@ node_modules/
 /blob-report/
 /playwright/.cache/
 /tests/Product.spec.ts.snapshots
-.env/
+.env
