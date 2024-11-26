@@ -1,6 +1,5 @@
 import { defineConfig, devices } from '@playwright/test';
 import './setup-env'; // Ensure this is loaded first
-const argos_Token = process.env.ARGOS_TOKEN
 
 /**
  * Read environment variables from file.
@@ -34,7 +33,7 @@ export default defineConfig({
       uploadToArgos: !!process.env.CI,
 
       // Set your Argos token (required if not using GitHub Actions).
-      token: argos_Token,
+      token: process.env.ARGOS_TOKEN,
     },
   ],
 ],
