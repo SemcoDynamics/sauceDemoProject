@@ -34,7 +34,7 @@ export default defineConfig({
       uploadToArgos: !!process.env.CI,
 
       // Set your Argos token (required if not using GitHub Actions).
-      token: argos_Token,
+      token:argos_Token,
     },
   ],
 ],
