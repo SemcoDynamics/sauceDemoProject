@@ -27,7 +27,7 @@
     "test": "tests"
   },
   "dependencies": {
-    "dotenv": "^16.4.5",
+    "dotenv": "^16.4.7",
     "playwright": "^1.48.2",
     "playwright-core": "^1.48.2",
     "random-js": "^2.1.0",
