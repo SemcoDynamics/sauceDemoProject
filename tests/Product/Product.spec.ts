@@ -1,50 +1,50 @@
 import { test } from '../../Fixtures/LoginAndNavigate';
 import { Login_Page } from '../../POM/Login_Page';
-import data from '../../HelperFiles/data.json';
+import users from '../../HelperFiles/data.json';
 import { Product_Page } from '../../POM/Product_Page';
 import { expect } from 'playwright/test';
 
 test.describe('Filter selection', () => {
   test.beforeEach(async ({ page }) => {
     const loginPage = new Login_Page(page)
-    await loginPage.LoginForm(data.env.bURL, data.users.standard, data.password)
+    await loginPage.LoginForm(users.env.bURL, users.users.standard, users.password)
 
   });
   
     test('Verify filter order (A to Z)', async ({ page }) => {
       const productPage = new Product_Page(page)
 
-      await productPage.selectFilter(data.productFilters.NameAtoZ.filterValue)
+      await productPage.selectFilter(users.productFilters.NameAtoZ.filterValue)
       const inventoryItemArray = await productPage.inventoryItemName.allTextContents()
 
-       expect(inventoryItemArray).toEqual(data.productFilters.NameAtoZ.filterArray)
+       expect(inventoryItemArray).toEqual(users.productFilters.NameAtoZ.filterArray)
     })
     test('Verify filter order Name (Z to A)', async ({ page }) => {
       const productPage = new Product_Page(page)
 
-      await productPage.selectFilter(data.productFilters.NameZtoA.filterValue)
+      await productPage.selectFilter(users.productFilters.NameZtoA.filterValue)
       const inventoryItemArray = await productPage.inventoryItemName.allTextContents()
 
-       expect(inventoryItemArray).toEqual(data.productFilters.NameZtoA.filterArray)
+       expect(inventoryItemArray).toEqual(users.productFilters.NameZtoA.filterArray)
     })
     test('Verify filter order Price (low to high)', async ({ page }) => {
       const productPage = new Product_Page(page)
 
-      await productPage.selectFilter(data.productFilters.PriceLowToHigh.filterValue)
+      await productPage.selectFilter(users.productFilters.PriceLowToHigh.filterValue)
       const inventoryItemArray = await productPage.inventoryItemName.allTextContents()
       console.log(inventoryItemArray)
 
-       expect(inventoryItemArray).toEqual(data.productFilters.PriceLowToHigh.filterArray)
+       expect(inventoryItemArray).toEqual(users.productFilters.PriceLowToHigh.filterArray)
 
     })
     test('Verify filter order Price (high to low)', async ({ page }) => {
       const productPage = new Product_Page(page)
 
-      await productPage.selectFilter(data.productFilters.PriceHighToLow.filterValue)
+      await productPage.selectFilter(users.productFilters.PriceHighToLow.filterValue)
       const inventoryItemArray = await productPage.inventoryItemName.allTextContents()
       console.log(inventoryItemArray)
 
-       expect(inventoryItemArray).toEqual(data.productFilters.PriceHighToLow.filterArray)
+       expect(inventoryItemArray).toEqual(users.productFilters.PriceHighToLow.filterArray)
 
     })
 
@@ -53,26 +53,26 @@ test.describe('Add Product to cart', () => {
   test('Add a product to cart', async ({ loginPage, page }) => {
       const productPage = new Product_Page(page);
 
-      await productPage.selectProductHeaderAndAddToCart([data.itemDescriptionName.SauceLabsBoltTShirt]);
+      await productPage.selectProductHeaderAndAddToCart([users.itemDescriptionName.SauceLabsBoltTShirt]);
   });
   test('Add a muliple product to cart', async ({ loginPage, page }) => {
       const productPage = new Product_Page(page);
 
-      await productPage.selectProductHeaderAndAddToCart([data.itemDescriptionName.SauceLabsBoltTShirt, data.itemDescriptionName.SauceLabsBikeLight])
+      await productPage.selectProductHeaderAndAddToCart([users.itemDescriptionName.SauceLabsBoltTShirt, users.itemDescriptionName.SauceLabsBikeLight])
     })
 })
 test.describe('View product description', () => {
   test('Select product description', async ({ loginPage, page }) => {
     const productPage = new Product_Page(page);
 
-    await productPage.inventoryItemName.filter({hasText: data.itemDescriptionName.SauceLabsBikeLight}).click()
-    await expect(productPage.inventoryItemName).toHaveText(data.itemDescriptionName.SauceLabsBikeLight)
-    await expect(productPage.productDescriptionBody).toHaveText(data.productDescriptionBodyText.BikeLight)
+    await productPage.inventoryItemName.filter({hasText: users.itemDescriptionName.SauceLabsBikeLight}).click()
+    await expect(productPage.inventoryItemName).toHaveText(users.itemDescriptionName.SauceLabsBikeLight)
+    await expect(productPage.productDescriptionBody).toHaveText(users.productDescriptionBodyText.BikeLight)
   });
   test('Add to cart from product description page', async ({ loginPage, page}) => {
     const productPage = new Product_Page(page);
 
-    await productPage.inventoryItemName.filter({hasText: data.itemDescriptionName.SauceLabsBikeLight}).click()
+    await productPage.inventoryItemName.filter({hasText: users.itemDescriptionName.SauceLabsBikeLight}).click()
     await productPage.addToCartButton.click()
     await expect(productPage.cardBadge).toHaveText('1')
     await expect(productPage.removeButton).toHaveText('Remove')
