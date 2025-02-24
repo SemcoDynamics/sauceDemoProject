@@ -13,6 +13,7 @@ test.describe('Filter selection', () => {
   
     test('Verify filter order (A to Z)', async ({ page }) => {
       const productPage = new Product_Page(page)
+      const helpers = new Helper(page);
 
       await productPage.selectFilter(data.productFilters.NameAtoZ.filterValue)
       const inventoryItemArray = await productPage.inventoryItemName.allTextContents()
@@ -21,6 +22,7 @@ test.describe('Filter selection', () => {
     })
     test('Verify filter order Name (Z to A)', async ({ page }) => {
       const productPage = new Product_Page(page)
+      const helpers = new Helper(page);
 
       await productPage.selectFilter(data.productFilters.NameZtoA.filterValue)
       const inventoryItemArray = await productPage.inventoryItemName.allTextContents()
@@ -29,6 +31,7 @@ test.describe('Filter selection', () => {
     })
     test('Verify filter order Price (low to high)', async ({ page }) => {
       const productPage = new Product_Page(page)
+      const helpers = new Helper(page);
 
       await productPage.selectFilter(data.productFilters.PriceLowToHigh.filterValue)
       const inventoryItemArray = await productPage.inventoryItemName.allTextContents()
@@ -39,6 +42,7 @@ test.describe('Filter selection', () => {
     })
     test('Verify filter order Price (high to low)', async ({ page }) => {
       const productPage = new Product_Page(page)
+      const helpers = new Helper(page);
 
       await productPage.selectFilter(data.productFilters.PriceHighToLow.filterValue)
       const inventoryItemArray = await productPage.inventoryItemName.allTextContents()
@@ -53,12 +57,14 @@ test.describe('Add Product to cart', () => {
   test('Add a product to cart', async ({loginAndNavigate, page }) => {
       await loginAndNavigate;
       const productPage = new Product_Page(page);
+      const helpers = new Helper(page);
 
       await productPage.selectProductHeaderAndAddToCart([data.itemDescriptionName.SauceLabsBoltTShirt]);
   });
   test('Add a muliple product to cart', async ({loginAndNavigate, page }) => {
       await loginAndNavigate;
       const productPage = new Product_Page(page);
+      const helpers = new Helper(page);
 
       await productPage.selectProductHeaderAndAddToCart([data.itemDescriptionName.SauceLabsBoltTShirt, data.itemDescriptionName.SauceLabsBikeLight])
     })
@@ -67,6 +73,7 @@ test.describe('View product description', () => {
   test('Select product description', async ({loginAndNavigate, page }) => {
     await loginAndNavigate;
     const productPage = new Product_Page(page);
+    const helpers = new Helper(page);
 
     await productPage.inventoryItemName.filter({hasText: data.itemDescriptionName.SauceLabsBikeLight}).click()
     await expect(productPage.inventoryItemName).toHaveText(data.itemDescriptionName.SauceLabsBikeLight)
