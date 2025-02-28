@@ -25,6 +25,11 @@ test.describe('Cart', () => {
         await cartPage.continueShoppingButton.click()
         await expect(page).toHaveURL('https://www.saucedemo.com/inventory.html')
     });
+    test('Go back to Product page from your cart page1', async ({ productPage, page }) => {
+        await expect(cartPage.inventoryItem).toContainText('Sauce Labs Bolt T-Shirt');
+        await cartPage.continueShoppingButton.click()
+        await expect(page).toHaveURL('https://www.saucedemo.com/inventory.html')
+    });
     
 });
 
