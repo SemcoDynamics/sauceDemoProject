@@ -13,14 +13,14 @@ test.beforeEach(async ({ page }) => {
 
 
 test.describe('Checkout tests', () => {
-    test('Fill in form and checkout', async ({ loginPage, cartPage }) => {
+    test('Fill in form and checkout', {tag:['@CHECKOUT']}, async ({ loginPage, cartPage }) => {
         await checkoutPage.checkoutForm(data.formDetails.firstnames[1], data.formDetails.lastnames[2], data.formDetails.postalCode[3]);
         await checkoutPage.continueButton.click();
         await expect(cartPage.inventoryItem).toContainText('Sauce Labs Bolt T-Shirt');
         await expect(cartPage.inventoryItem).toContainText('$15.99')
         await checkoutPage.finishButton.click()
     })
-    test('fill form and cancel', async ({ loginPage, cartPage }) => {
+    test('fill form and cancel', {tag:['@CHECKOUT']}, async ({ loginPage, cartPage }) => {
         await checkoutPage.checkoutForm(data.formDetails.firstnames[2], data.formDetails.lastnames[3], data.formDetails.postalCode[4])
         await checkoutPage.cancelButton.click()
         await expect(cartPage.inventoryItem).toContainText('Sauce Labs Bolt T-Shirt');
@@ -28,7 +28,7 @@ test.describe('Checkout tests', () => {
     });
     
 })
-test.describe('Checkout complete', () => {
+test.describe('Checkout complete', {tag:['@CHECKOUT']}, () => {
     test('Complete the checkout', async ({loginPage, cartPage, checkoutPage }) => {
         await expect(checkoutPage.checkoutCompleteContainer).toContainText(data.CompleteHeader)
         await expect(checkoutPage.checkoutCompleteContainer).toContainText(data.CompleteText)
