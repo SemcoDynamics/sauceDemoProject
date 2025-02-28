@@ -10,17 +10,17 @@ test.beforeEach(async ({ page }) => {
 
 
 test.describe('Cart', () => {
-    test('View your cart', async ({ productPage }) => {
+    test('View your cart', {tag:['@CART']}, async ({ productPage }) => {
         await expect(cartPage.inventoryItem).toContainText('Sauce Labs Bolt T-Shirt');
         await expect(cartPage.inventoryItem).toContainText('$15.99')
         await cartPage.checkoutButton.click()
     });  
-    test('Remove product from cart page', async ({ productPage }) => {
+    test('Remove product from cart page',{tag:['@CART']}, async ({ productPage }) => {
         await expect(cartPage.inventoryItem).toContainText('Sauce Labs Bolt T-Shirt');
         await cartPage.removeButton.click()
         await expect(cartPage.inventoryItem).toBeHidden()
 });
-    test('Go back to Product page from your cart page', async ({ productPage, page }) => {
+    test('Go back to Product page from your cart page',{tag:['@CART']}, async ({ productPage, page }) => {
         await expect(cartPage.inventoryItem).toContainText('Sauce Labs Bolt T-Shirt');
         await cartPage.continueShoppingButton.click()
         await expect(page).toHaveURL('https://www.saucedemo.com/inventory.html')

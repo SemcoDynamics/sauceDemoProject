@@ -17,7 +17,7 @@ test.describe('Mock test', () => {
         })
     });
     
-    test('My first mocked test', async ({ page }) => {
+    test('My first mocked test', {tag:['@API']}, async ({ page }) => {
         await page.goto('https://conduit.bondaracademy.com/')
         await page.waitForSelector('.tag-list')
         const taglist = page.locator('.tag-list')
@@ -27,7 +27,7 @@ test.describe('Mock test', () => {
     });
      
 });
-test.describe('Mock test refractored', () => {
+test.describe('Mock test refractored', {tag:['@API']}, () => {
     test.beforeEach(async ({ page }) => {
         await page.route('https://conduit-api.bondaracademy.com/api/tags', async route => {
             await route.fulfill({
@@ -37,12 +37,12 @@ test.describe('Mock test refractored', () => {
         })
     });
     
-    test('My first mocked test', async ({ page }) => {
+    test('My first mocked test', {tag:['@API']}, async ({ page }) => {
         await page.goto('https://conduit.bondaracademy.com/')
         await page.waitForSelector('.tag-list')
     });
 });
-test.describe('Mock test 2', () => {
+test.describe('Mock test 2', {tag:['@API']}, () => {
     test.beforeEach(async ({ page }) => {
         await page.route('https://conduit-api.bondaracademy.com/api/articles?limit=10&offset=0', async route => {
             await route.fulfill({
@@ -52,13 +52,13 @@ test.describe('Mock test 2', () => {
         })
     });
     
-    test('My first mocked test', async ({ page }) => {
+    test('My first mocked test', {tag:['@API']}, async ({ page }) => {
         await page.goto('https://conduit.bondaracademy.com/')
         await page.waitForSelector('.article-preview')
     });
     
 });
-test.describe('Mock API without a Json', () => {
+test.describe('Mock API without a Json', {tag:['@API']}, () => {
     test('Mock 1 - Fetching API and editing value', async ({ page }) => {
         
         await page.route('https://conduit-api.bondaracademy.com/api/articles?limit=10&offset=0', async route => {
@@ -81,7 +81,7 @@ test.describe('Mock API without a Json', () => {
 
 });
 
-test('Abort request', async ({ page }) => {
+test('Abort request', {tag:['@API']}, async ({ page }) => {
     await page.goto('https://conduit.bondaracademy.com/');
 
     await page.route('https://conduit-api.bondaracademy.com/api/tags', route => route.abort());
