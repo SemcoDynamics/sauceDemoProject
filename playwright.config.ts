@@ -30,6 +30,14 @@ export default defineConfig({
   use: {
     /* Base URL to use in actions like `await page.goto('/')`. */
     baseURL: 'https://www.saucedemo.com',
+    trace: "on",
+    video: "on",
+    screenshot: 'only-on-failure',
+    headless: true,
+    viewport: { width: 1900, height: 940},
+    launchOptions: {
+      slowMo: 500,
+    },
 
     /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
   },
