@@ -5,7 +5,12 @@
   "scripts": {
     "codegen": "npx playwright codegen",
     "ui": "npx playwright test --ui",
-    "tests": "npx playwright test"
+    "tests": "npx playwright test",
+    "test:api": "npx playwright test --grep @API",
+    "test:cart": "npx playwright test --grep @CART",
+    "test:checkout": "npx playwright test --grep @CHECKOUT",
+    "test:login": "npx playwright test --grep @LOGIN",
+    "test:product": "npx playwright test --grep @PRODUCT"
   },
   "keywords": [
     "playwright",
