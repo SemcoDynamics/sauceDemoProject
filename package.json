@@ -21,7 +21,7 @@
   "license": "ISC",
   "description": "- Runs the end-to-end tests.",
   "devDependencies": {
-    "@faker-js/faker": "^9.2.0",
+    "@faker-js/faker": "^10.5.0",
     "@playwright/test": "^1.48.2",
     "@types/node": "^22.10.0",
     "dotenv": "^16.4.5",
